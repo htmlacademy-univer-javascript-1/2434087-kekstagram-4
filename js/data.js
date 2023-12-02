@@ -1,4 +1,3 @@
-import { createRandom } from './util.js';
 import { getRandomNumber } from './util.js';
 
 const messages = ['Всё отлично!',
@@ -22,11 +21,6 @@ const description = [
 
 const COUNT_PHOTO = 25;
 
-const Id = {
-  MIN: 1,
-  MAX: 25
-};
-
 const Likes = {
   MAX: 15,
   MIN: 200
@@ -42,23 +36,24 @@ const Avatar = {
   MAX: 6
 };
 
-const generate = createRandom(Id.MIN, Id.MAX);
-
-const createComment = () => ({
-  id: generate(),
+const createComment = (id) => ({
+  id: id,
   avatar: `img/avatar-${getRandomNumber(Avatar.MIN, Avatar.MAX)}svg`,
   message: messages[getRandomNumber(0, messages.length-1)],
   name: name[getRandomNumber(0, name.length - 1)]
 });
 
-const createPhoto = () => ({
-  id: generate(),
-  url: `photos/${generate()}.jpg`,
+const createPhoto = (id) => ({
+  id: id,
+  url: `photos/${id}.jpg`,
   description: description[getRandomNumber(0, description.length - 1)],
   likes: getRandomNumber(Likes.MIN, Likes.MAX),
-  comments: Array.from({length: getRandomNumber(Comments.MIN, Comments.MAX)}, createComment)
+  comments: Array.from({length: getRandomNumber(Comments.MIN, Comments.MAX)}).map((_, index) => createComment(index + 1))
 });
 
-const getPhoto = () => Array.from({length: COUNT_PHOTO}, createPhoto);
 
-export {getPhoto};
+const getPhoto = () => Array.from({length: COUNT_PHOTO}).map((_, index) => createPhoto(index + 1));
+
+const photos = getPhoto();
+
+export {photos};
