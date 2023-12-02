@@ -69,3 +69,4 @@ const getRandomSentences = () => {
   return chosenSentences;
 };
 export { generatePhotos };
+
