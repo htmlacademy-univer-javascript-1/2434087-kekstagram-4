@@ -49,7 +49,7 @@ const createComment = () => ({
   id: getRandomInteger(1, COMMENT_MAX_COUNT),
   avatar: img/avatar-${getRandomInteger(1, AVATAR_COUNT)}.svg,
   message: getRandomArrayElement(MESSAGES),
-  name: getRandomArrayElement(NAMES)
+  name getRandomArrayElement(NAMES)
 });
 const getRandomSentences = () => {
   const chosenSentences = [];
