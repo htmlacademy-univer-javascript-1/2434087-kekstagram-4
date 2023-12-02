@@ -51,9 +51,7 @@ const createPhoto = (id) => ({
   comments: Array.from({length: getRandomNumber(Comments.MIN, Comments.MAX)}).map((_, index) => createComment(index + 1))
 });
 
-
 const getPhoto = () => Array.from({length: COUNT_PHOTO}).map((_, index) => createPhoto(index + 1));
-
 const photos = getPhoto();
-
 export {photos};
+
