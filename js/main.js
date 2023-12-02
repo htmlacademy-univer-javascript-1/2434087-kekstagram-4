@@ -1,3 +1,5 @@
-import {generatePhotos} from './data.js';
-import { renderMiniatures } from './miniature.js';
-renderMiniatures (generatePhotos());
+import {photos} from './data.js';
+import {renderPictures} from './pictures.js';
+
+renderPictures(photos);
+
