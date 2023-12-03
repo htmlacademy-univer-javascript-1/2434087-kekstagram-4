@@ -1,3 +1,4 @@
+
 import { createPostsArray } from './data.js';
 import { renderPictures } from './renderer.js';
 import { openModal } from './pictures-modal.js';
@@ -11,4 +12,10 @@ pictureElements.forEach((pictureElement, index) => {
     openModal(posts[index]);
   });
 });
+
+
+import {photos} from './data.js';
+import {renderPictures} from './pictures.js';
+
+renderPictures(photos);
 
