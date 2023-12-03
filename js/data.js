@@ -57,4 +57,3 @@ const getPhoto = () => Array.from({length: COUNT_PHOTO}).map((_, index) => creat
 const photos = getPhoto();
 
 export {photos};
-
