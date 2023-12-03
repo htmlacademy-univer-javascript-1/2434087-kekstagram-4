@@ -30,6 +30,7 @@ const isPalindrom = (inputString) => {
   return (newString === reverseString);
 };
 
+
 const getCount = (inputParam) => {
   const newString = inputParam.toString();
   let number = '';
