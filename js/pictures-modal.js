@@ -20,6 +20,7 @@ const openModal = (picture) => {
   socialCaption.textContent = picture.description;
 
   currentCommentsIndex = 0;
+  // eslint-disable-next-line no-use-before-define
   showCommentsChunk(picture.comments);
 
   socialCommentCount.classList.remove('hidden');
@@ -28,8 +29,11 @@ const openModal = (picture) => {
   body.classList.add('modal-open');
   bigPicture.classList.remove('hidden');
 
+  // eslint-disable-next-line no-use-before-define
   document.addEventListener('keydown', onEscPress);
+  // eslint-disable-next-line no-use-before-define
   bigPicture.querySelector('#picture-cancel').addEventListener('click', closeModal);
+  // eslint-disable-next-line no-use-before-define
   commentsLoader.addEventListener('click', onLoadMoreComments);
 };
 
@@ -51,6 +55,7 @@ height="35">
     socialComments.appendChild(commentTemplate);
   });
 
+  // eslint-disable-next-line no-use-before-define
   updateCommentCount();
 };
 
@@ -73,6 +78,7 @@ const closeModal = () => {
   body.classList.remove('modal-open');
   bigPicture.classList.add('hidden');
 
+  // eslint-disable-next-line no-use-before-define
   document.removeEventListener('keydown', onEscPress);
   bigPicture.querySelector('#picture-cancel').removeEventListener('click', closeModal);
   commentsLoader.removeEventListener('click', onLoadMoreComments);
