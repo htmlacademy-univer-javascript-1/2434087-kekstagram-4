@@ -1,21 +1,10 @@
+import './data.js';
+import {PHOTOS_COUNT, createImage } from './data.js';
+import {createPictures} from './pictures.js';
+import './big-picture.js';
+import './form.js';
+import './hashtag-pristine.js';
 
-import { createPostsArray } from './data.js';
-import { renderPictures } from './renderer.js';
-import { openModal } from './pictures-modal.js';
+const pictures = Array.from( {length: PHOTOS_COUNT}, createImage);
 
-const posts = createPostsArray();
-renderPictures(posts);
-const pictureElements = document.querySelectorAll('.picture');
-
-pictureElements.forEach((pictureElement, index) => {
-  pictureElement.addEventListener('click', () => {
-    openModal(posts[index]);
-  });
-});
-
-
-import {photos} from './data.js';
-import {renderPictures} from './pictures.js';
-
-renderPictures(photos);
-
+createPictures(pictures);
