@@ -93,4 +93,3 @@ noUiSlider.create(sliderElement, {
   connect: 'lower',
 });
 export {initRadios,  resetFilters};
-
