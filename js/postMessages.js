@@ -45,7 +45,6 @@ const onErrorClick = (evt) => {
 const appendMessage = (message) => {
   message.classList.add('hidden');
   message.style.zIndex = MESSAGE_Z_POSITION;
-
   document.body.appendChild(message);
 };
 
