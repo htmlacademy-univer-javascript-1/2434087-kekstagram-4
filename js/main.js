@@ -4,7 +4,7 @@ import {onRecieveSuccess, showUnloadingErrorMessage} from './dataUpload.js';
 
 setData(onRecieveSuccess,
   () => {
-    showUnloadingErrorMessage('РќРµ СѓРґР°Р»РѕСЃСЊ Р·Р°РіСЂСѓР·РёС‚СЊ РґР°РЅРЅС‹Рµ РёР· СЃРµСЂРІРµСЂР° :(');
+    showUnloadingErrorMessage('Не удалось загрузить данные из сервера :(');
   },
   'GET');
 

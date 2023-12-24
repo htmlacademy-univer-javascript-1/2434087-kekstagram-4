@@ -29,31 +29,31 @@ const hashtagErrorHandler = (value) => {
   const inputRules = [
     {
       rule: hashtagTexts.some((text) => text.indexOf('#', 1) > 0),
-      error: 'РҐСЌС€-С‚РµРіРё РґРѕР»Р¶РЅС‹ СЂР°Р·РґРµР»СЏС‚СЊСЃСЏ РїСЂРѕР±РµР»Р°РјРё'
+      error: 'Хэш-теги должны разделяться пробелами'
     },
     {
       rule: hashtagTexts.some((text) => text[0] !== '#'),
-      error: 'РҐСЌС€-С‚РµРі РґРѕР»Р¶РµРЅ РЅР°С‡РёРЅР°С‚СЊСЃСЏ СЃ СЃРёРјРІРѕР»Р° # (СЂРµС€С‘С‚РєР°)'
+      error: 'Хэш-тег должен начинаться с символа # (решётка)'
     },
     {
       rule: hashtagTexts.some((text) => text.length === 1 || text[0] !== '#'),
-      error: 'РҐРµС€-С‚РµРі РЅРµ РјРѕР¶РµС‚ СЃРѕСЃС‚РѕСЏС‚СЊ С‚РѕР»СЊРєРѕ РёР· РѕРґРЅРѕР№ СЂРµС€С‘С‚РєРё'
+      error: 'Хеш-тег не может состоять только из одной решётки'
     },
     {
       rule: hashtagTexts.some((text) => text.length > MAX_HASHTAGS_LENGTH),
-      error: `Р”Р»РёРЅР° С…РµС€-С‚РµРіР° РїСЂРµРІС‹С€Р°РµС‚ ${MAX_HASHTAGS_LENGTH} СЃРёРјРІРѕР»РѕРІ`
+      error: `Длина хеш-тега превышает ${MAX_HASHTAGS_LENGTH} символов`
     },
     {
       rule: hashtagTexts.some((text, index, array) => array.indexOf(text, index + 1) > index),
-      error: 'РћРґРёРЅ Рё С‚РѕС‚ Р¶Рµ С…СЌС€-С‚РµРі РЅРµ РјРѕР¶РµС‚ Р±С‹С‚СЊ РёСЃРїРѕР»СЊР·РѕРІР°РЅ РґРІР°Р¶РґС‹'
+      error: 'Один и тот же хэш-тег не может быть использован дважды'
     },
     {
-      rule: hashtagTexts.some((text) => !/^#[0-9Р°-СЏС‘a-z]{1,19}$/i.test(text)),
-      error: 'РҐРµС€-С‚РµРі СЃРѕРґРµСЂР¶РёС‚ РЅРµРґРѕРїСѓСЃС‚РёРјС‹Рµ СЃРёРјРІРѕР»С‹'
+      rule: hashtagTexts.some((text) => !/^#[0-9а-яёa-z]{1,19}$/i.test(text)),
+      error: 'Хеш-тег содержит недопустимые символы'
     },
     {
       rule: hashtagTexts.length > MAX_HASHTAGS_COUNT,
-      error: `РќРµР»СЊР·СЏ СѓРєР°Р·С‹РІР°С‚СЊ Р±РѕР»СЊС€Рµ ${MAX_HASHTAGS_COUNT} С…СЌС€-С‚РµРіРѕРІ`
+      error: `Нельзя указывать больше ${MAX_HASHTAGS_COUNT} хэш-тегов`
     }
   ];
 
