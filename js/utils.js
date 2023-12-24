@@ -19,6 +19,7 @@ const debounce = (callback) => {
 const shuffle = (array) => {
   for(let firstIndex = array.length - 1; firstIndex > 0; firstIndex--) {
     const randomIndex = Math.floor(Math.random() * (firstIndex + 1));
+
     [array[firstIndex], array[randomIndex]] = [array[randomIndex], array[firstIndex]];
   }
 
