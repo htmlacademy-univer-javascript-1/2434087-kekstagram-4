@@ -42,8 +42,8 @@ const addNewComments = () => {
     loadingButton.classList.add('hidden');
   }
 
-  commentsCountItem.innerHTML = `${addedCommentsCount} РёР· <span class="comments-count">${commentsOverallCount}</span>
-  ${declineByNumber(commentsOverallCount, 'РєРѕРјРјРµРЅС‚Р°СЂРёР№', 'РєРѕРјРјРµРЅС‚Р°СЂРёСЏ', 'РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ')}`;
+  commentsCountItem.innerHTML = `${addedCommentsCount} из <span class="comments-count">${commentsOverallCount}</span>
+  ${declineByNumber(commentsOverallCount, 'комментарий', 'комментария', 'комментариев')}`;
 };
 
 const setComments = (comments) => {

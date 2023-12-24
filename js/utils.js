@@ -4,6 +4,7 @@ const MIN_DECIMAL_NUMBER = 10;
 const MAX_DECIMAL_NUMBER = 19;
 const MIN_HUNDREDTH_NUMBER = 100;
 
+
 const isEscape = (evt) => evt.key === 'Escape';
 
 const debounce = (callback) => {
